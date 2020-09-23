@@ -1,0 +1,114 @@
+================================================================
+===============NOTAS PARA LARAVE 7 CON PHP7.3===================
+================================================================
+
+##### OBTENER INFORMACION O AYUDA PARA CCREAR UN CONTROLADOR #####
+    php artisan make:controller -h
+
+##### CREAR UN CONTROLADOR DESDE CONSOLA CON ARTISAN #####
+    php artisan make:controller DeleteController -r
+
+##### Crear un form-request #####
+    php artisan make:request NombreDocumento
+
+##### CREAR UN MODELO #####
+    php artisan make:model NombreModelo
+
+Nota: laravel enlaza directa,nete con plurales las tablas de acuerdo con el nombre del modelo esto va bien si se escriben en ingles,
+        pero en español al tener terminaciones diferentes en plurar se debe agregar una propoedad dentro del mismo modelo una vez creado.
+Agregar esto si seran nombres en español o se trebajara con nombres de tablas en singular.
+    {
+        protected $tabla = "nombreTabla";
+    }
+
+##### ARRANCAR EL PROYECTO DE LARAVEL #####
+    php artisan serve
+
+##### IMPRIMIR EN PANTALLA CON BLADE #####
+    {{$variable;}}
+##### ABRIR Y CERRAR PARA CODIGO PHP EN BLADE #####
+    @php
+        $variable = valor;
+    @endphp
+##### DIRECTIVA if EN BLADE #####
+    @if($variable == valor)
+    @endif
+##### INCLUIR AUTENTIFICACION DE Laravel #####
+    composer require laravel/ui
+##### EJECUTAR DESPUES DEL COMANDO DE ARRIBA #####
+    php artisan ui:auth
+##### CREAR UN Modelo YA CON MIGRACION INCLUIDA#####
+    php artisan make:model NombreModelo --migration
+########################################################################################################
+##### PARA UN ERROR DE SQ[42000] agregar al compa que indica un 191, aun lado del nombre del campo #####
+########################################################################################################
+##### PARA REGRESAR A ALGO ANTERIOR DE LA MIGRACION SE OCUPA: #####
+    php artisan migrate:rollback
+##### PARA AGREGAR BOOTSTRAP #####
+    php artisan ui bootstrap
+##### AGREGAR VUE #####
+    php artisan ui vue
+##### AHORA INSTALAR LAS DEPENDENCIAS DE LOS ULTIMOS DOS COMANDOS #####
+    npm install
+##### DESPUES COMPILAR LAS DEPENDENCIAS #####
+    npm run dev
+##### PARA CORRER UN OBSERVABLE PARA NO ESTAR COMPILANDO SASS Y JS #####
+    npm run watch
+##### ABRIR Tinker #####
+    php artisan tinker
+##### Ejemplo para agregar informacion desde tinker #####
+    $usuario = new User //Intanciamos la clase User que mejor dicho es un Modelo
+    $usuario->name = "Arturo 2"; //Guardamos un valor en la instancio o variable usuario accediendo con la flecha seguido del parametro que indica en el modelo
+        $usuario; //Esto para imprimir el "arreglo" es como un print_r
+    $usuario->email = "correo2@correo.com";
+    $usuario->password= Hash::make("12345678"); //Agreamos una contraseña con una clase de laravel para hashear que es Hash::make("contraseñaAHashear");
+    $usuario->save(); //Por ultimo se utiliza ->save(); para guardan en base de datos
+
+    exit; //Para salirse de tinker
+
+    User::all(); //Extrar los usuarios o registros que se tienen
+    User::find(1); //Extrar un registro especifico por el id
+##### ELIMINA LOS REGISTROS QUE SE TIENEN EN TODAS LAS TABLAS Y DESPUES SE VUELVEN A EJECUTAR LAS MIGRACIONES EN AUTOMATICO #####
+    php artisan migrate:fresh
+##### CREAR UN MODELO, MIGRACION Y CONTROLLER EN UN MISMO COMANDO #####
+    **Nota: El modelo usualmente su nombre debe ser en singular y primera letra mayuscula
+    php artisan make:model Receta -mcr
+##### INSTALAR PAQUETE DE VALIDACION EN ESPAÑOL #####
+    composer require laraveles/spanish
+##### ACTUAIZAR AL IDIOMA EN ESPAÑOL #####
+    php artisan laraveles:install-lang
+##### CREAR Seeders PARA INFORMACION POR DEFAULT A LA BASE #####
+    php artisan make:seeder Nombre
+##### CORRER o EJECUTAR UN Seed #####
+    php artisan db:seed
+    **Nota: Sie ejectuas los seed sin limpiar la base(hacer un migrate:fresh), se duplicaran los resgistros
+##### CREAR ENLACES PARA QUE LAS IMAGENES QUE SUBEN AL SERVIDOR SEAN VISIBLES YA QUE SE ALMACENAN EN LA CARPETA DEL PROYECTO Y SON PRIVADAS #####
+    php artisan storage:link
+##### AGREGAR EFECTOS A LAS IMAGENES PARA RECORTARLAS, ETC. #####
+    composer require intervention/image
+##### CREAR UN POLICY PARA DAR PERMISOS A USUARIOS #####
+    php artisan make:policy RecetaPolicy -m Receta
+    **Nota: se le debe llmar con el modelo al que pertenecera seguido de Policy y despues se le indica a que modelo va
+##### TMANERAS DE HACER RELACION A UNA TABLA(antes solo eran tres: uno a uno, uno a muchos y muchos a muchos) #####
+    1:1 = sintaxis laravel ->hasOne
+    1:n = sintaxis laravel ->hasMany
+    n:n = sintaxis laravel ->belongsToMany
+
+    **Relaciones de regreso
+    1:1 = sintaxis laravel ->belongsTo
+    1:n = sintaxis laravel ->belongsTo
+    n:n = sintaxis laravel ->belongsToMany
+
+##### HACER MIGRACIONES SIN QUE SE BORREN LAS DE MAS(SOLO HACE LAS QUE AUN NO HAN SIDO MIGRADRAS O EJECUTADAS) #####
+    php artisan migrate --path=/database/migrations
+##### CREAR UN PROVIDER #####
+    php artisan make:provider CategoriasProvider
+#####  #####
+#####  #####
+#####  #####
+#####  #####
+#####  #####
+#####  #####
+#####  #####
+#####  #####
+#####  #####
