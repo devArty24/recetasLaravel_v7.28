@@ -1,6 +1,12 @@
 ================================================================
-===============NOTAS PARA LARAVE 7 CON PHP7.3===================
+=========NOTAS Y COMANDOS PARA LARAVE 7 CON PHP7.3==============
 ================================================================
+##### CRERA UN NUEVO PROYECTO DE LARAVEL SOLO SIRVE SI SE INSTALO laravel(laravel/installer)
+    laravel new NombreProyecto
+    
+ *****SI NO SE QUISO O NO SE ESTA INSTALADO laravel*************
+    En caso de querer crear un proyecto con una versión diferente a la última de Laravel o no queramos instalar el “Laravel”, tenemos la siguiente alternativa
+   composer create-project --prefer-dist laravel/laravel nombre_del_proyecto
 
 ##### OBTENER INFORMACION O AYUDA PARA CCREAR UN CONTROLADOR #####
     php artisan make:controller -h
