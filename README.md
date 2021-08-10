@@ -63,7 +63,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Key Features
 1. laravel/ui
 2. ui:auth
-3. Migraciones
+3. Migrations
 4. ui bootstrap
 5. ui vue (Vue.js)
 6. laraveles/spanish
