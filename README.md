@@ -60,6 +60,24 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+## Key Features
+1. laravel/ui
+2. ui:auth
+3. Migraciones
+4. ui bootstrap
+5. ui vue (Vue.js)
+6. laraveles/spanish
+7. laraveles:install-lang
+8. Seeders
+9. Trix Editor with cdn
+10. Intervention Image
+11. Moment.js
+12. Policys
+13. Vue SweetAlert2
+14. Events Laravel
+15. Owl Carousel
+16. Providers
+
 ## Installation
 
 Once downloaded, first install the project's own dependencies run the following in your command console
@@ -100,23 +118,3 @@ What you must do is a symbolic link, for this laravel already has a command so t
 ```
 \project_root_folder> php artisan storage:link
 ```
-
-
-## Herramientas
-
-1. laravel/ui
-2. ui:auth
-3. Migraciones
-4. ui bootstrap
-5. ui vue (Vue.js)
-6. laraveles/spanish
-7. laraveles:install-lang
-8. Seeders
-9. Trix Editor with cdn
-10. Intervention Image
-11. Moment.js
-12. Policys
-13. Vue SweetAlert2
-14. Events Laravel
-15. Owl Carousel
-16. Providers
