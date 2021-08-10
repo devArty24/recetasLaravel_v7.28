@@ -92,7 +92,7 @@ Now in your command console run the command
 \project_root_folder> php artisan key:generate
 ```
 
-Create a database already created edit the file `.env` the following variables:
+Create a database, when you have done it edit the .env file the following variables:
 ```
 DB_CONNECTION=mysql
 DB_HOST=localhost
