@@ -59,3 +59,64 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Installation
+
+Once downloaded, first install the project's own dependencies run the following in your command console
+```
+\project_root_folder> composer install
+```
+
+When finished installing, now look in the root folder of the project for the file `.env.example` and edit or copy but change the name to `.env`
+
+Now in your command console run the command
+```
+\project_root_folder> php artisan key: generate
+```
+
+Create a database already created edit the file `.env` the following variables:
+```
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=nameYourDataBase
+DB_USERNAME=root
+DB_PASSWORD=
+```
+> The project was carried out with MySQL, so the configuration would remain as the code shown in addition to the fact that the example is written for a local environment
+
+Already created the base and configured the environment variables of the file `.env`. Now run the migrations, in your command console run
+```
+\project_root_folder> php artisan migrate
+```
+
+The project has two seeders, one that creates 2 users in the db and the other of categories. To run these seeders on your console type
+```
+\project_root_folder> php artisan db:seed
+```
+
+When you upload an image from the recipe form, these are stored in the storage folder, which is a protected folder for the end user, which causes that the images are not displayed when displaying them.
+What you must do is a symbolic link, for this laravel already has a command so there is no need to create it "manually" the command you must execute is:
+```
+\project_root_folder> php artisan storage:link
+```
+
+
+## Herramientas
+
+1. laravel/ui
+2. ui:auth
+3. Migraciones
+4. ui bootstrap
+5. ui vue (Vue.js)
+6. laraveles/spanish
+7. laraveles:install-lang
+8. Seeders
+9. Trix Editor with cdn
+10. Intervention Image
+11. Moment.js
+12. Policys
+13. Vue SweetAlert2
+14. Events Laravel
+15. Owl Carousel
+16. Providers
