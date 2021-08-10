@@ -89,7 +89,7 @@ When finished installing, now look in the root folder of the project for the fil
 
 Now in your command console run the command
 ```
-\project_root_folder> php artisan key: generate
+\project_root_folder> php artisan key:generate
 ```
 
 Create a database already created edit the file `.env` the following variables:
